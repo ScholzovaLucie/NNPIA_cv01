@@ -10,8 +10,9 @@ class FieldInjectionGreetingControllerTest {
     @Test
     void sayHellow() {
         GreetingService service = new GreetingService() ;
-        FieldInjectionGreetingController controller = new FieldInjectionGreetingController(service);
+        FieldInjectionGreetingController controller = new FieldInjectionGreetingController();
 
+        controller.greetingService = service;
         System.out.println(controller.sayHellow());
     }
 }
