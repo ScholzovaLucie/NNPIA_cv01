@@ -1,18 +1,16 @@
 package org.example.cv_01.controllers;
 
-import org.example.cv_01.services.GreetingService;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class FieldInjectionGreetingControllerTest {
+    @Autowired
+    FieldInjectionGreetingController controller;
 
     @Test
     void sayHellow() {
-        GreetingService service = new GreetingService() ;
-        FieldInjectionGreetingController controller = new FieldInjectionGreetingController();
-
-        controller.greetingService = service;
         System.out.println(controller.sayHellow());
     }
 }
